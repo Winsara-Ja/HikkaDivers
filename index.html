@@ -11,7 +11,7 @@
   <link data-wpr-hosted-gf-parameters="family=DM%20Sans%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900%2C100italic%2C200italic%2C300italic%2Citalic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%7CMerriweather%3A300%2C300italic%2Cregular%2Citalic%2C700%2C700italic%2C900%2C900italic%7COpen%20Sans%3A300%2Cregular%2C500%2C600%2C700%2C800%2C300italic%2Citalic%2C500italic%2C600italic%2C700italic%2C800italic&amp;subset=latin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cvietnamese%2Cgreek%2Cgreek-ext%2Chebrew%2Cmath%2Csymbols&amp;display=swap" href="wp-content/cache/fonts/2/google-fonts/css/4/f/6/8ba0b86357408817bc56a4b18428b.css" rel="stylesheet">
    <meta content="max-image-preview:large" name="robots">
     <link href="http://goodlayers.b-cdn.net/" rel="dns-prefetch">
-    <link rel="icon" type="image/svg+xml" href="images/Logo.png" />
+    <link rel="icon" type="image/svg+xml" href="images/Logo1.png" />
     <link href="css/custom.css">
      <link href="http://goodlayers.b-cdn.net/" rel="preconnect">
       <link href="feed/index.html" rel="alternate" title="Zurf » Feed" type="application/rss+xml"/>
@@ -104,9 +104,97 @@ SnazzyDataForSnazzyMaps={"id":8097,"name":"WY","description":"Map style for WY d
     </link>
    </meta>
   </link>
+<style>
+#loader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+      circle at center,
+      rgba(255, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.9)
+  );
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease;
+}
 
+/* Hide after fade-out */
+#loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+  .loader-wrapper {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loader-logo {
+    width: 100%;
+  }
+
+  /* Bubble container positioned at snorkel area */
+  .bubble-container {
+    position: absolute;
+    left: -10%;
+    top: -50%;
+    width: 80px;
+    height: 180px;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  .bubble {
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.85);
+    animation: rise 3s infinite ease-out;
+    opacity: 0;
+    /* Random delay and direction per bubble */
+    animation-delay: calc(var(--d) * 1s);
+    left: calc(50% + (var(--x) * 3px)); /* narrow start tube */
+  }
+
+  @keyframes rise {
+    0% {
+      transform: translateY(0) scale(0.5);
+      opacity: 0.9;
+    }
+    60% {
+      transform: translateY(-100px) translateX(calc(var(--x) * 10px)) scale(1);
+    }
+    100% {
+      transform: translateY(-180px) translateX(calc(var(--x) * 20px)) scale(1.3);
+      opacity: 0;
+    }
+  }
+</style>
  </head>
- <body class="home wp-singular page-template-default page page-id-15793 wp-theme-zurf theme-zurf gdlr-core-body tourmaster-body woocommerce-no-js zurf-body zurf-body-front zurf-full zurf-with-sticky-navigation zurf-blockquote-style-3 gdlr-core-link-to-lightbox" data-home-url="https://demo.goodlayers.com/zurf/scuba/">
+ <body class="home wp-singular page-template-default page page-id-15793 wp-theme-zurf theme-zurf gdlr-core-body tourmaster-body woocommerce-no-js zurf-body zurf-body-front zurf-full zurf-with-sticky-navigation zurf-blockquote-style-3 gdlr-core-link-to-lightbox" data-home-url="">
+  <div id="loader">
+  <div class="loader-wrapper">
+  <img src="images/Logo1.png" class="loader-logo" />
+
+  <div class="bubble-container">
+
+    <!-- Bubbles with randomness -->
+    <span class="bubble" style="--d:0;   --x:-1;   width:24px; height:24px;"></span>
+    <span class="bubble" style="--d:.6; --x:1;     width:28px; height:28px;"></span>
+    <span class="bubble" style="--d:1.1; --x:-0.5; width:20px; height:20px;"></span>
+    <span class="bubble" style="--d:1.7; --x:0.8;  width:32px; height:32px;"></span>
+    <span class="bubble" style="--d:2.3; --x:-0.3; width:26px; height:26px;"></span>
+
+  </div>
+</div>
+</div>
   <div class="zurf-mobile-header-wrap">
    <div class="zurf-top-bar">
     <div class="zurf-top-bar-background">
@@ -310,7 +398,7 @@ SnazzyDataForSnazzyMaps={"id":8097,"name":"WY","description":"Map style for WY d
     </div>
     <div class="zurf-page-wrapper" id="zurf-page-wrapper">
      <div class="gdlr-core-page-builder-body clearfix">
-      <div class="gdlr-core-pbf-wrapper" id="gdlr-core-wrapper-1" style="padding: 390px 0px 360px 0px;">
+      <div class="gdlr-core-pbf-wrapper" id="gdlr-core-wrapper-1" style="padding: 370px 0px 300px 0px;">
        <div class="gdlr-core-pbf-background-wrap" style="background-color: #004375 ;">
         <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" data-parallax-speed="0" style="background-image: url(images/13.jpeg) ;background-size: cover ;background-repeat: no-repeat ;background-position: center ;">
         </div>
@@ -320,14 +408,14 @@ SnazzyDataForSnazzyMaps={"id":8097,"name":"WY","description":"Map style for WY d
          <div class="gdlr-core-pbf-element">
           <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" id="gdlr-core-title-item-1" style="padding-bottom: 50px ;">
            <div class="gdlr-core-title-item-title-wrap">
-            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title class-test" style="font-size: 82px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;color: #ffffff ;">
-             INTRO DIVE
+            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title class-test" style="font-size: 75px;letter-spacing: 0px ;text-transform: none ;color: #ffffff ;">
+             Explore the Blue with Hikka Divers
              <span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider">
              </span>
             </h3>
            </div>
            <span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 22px ;font-weight: 500 ;font-style: normal ;letter-spacing: 0px ;color: #ffffff ;margin-top: 15px ;">
-            For those who want to experience something in between scuba diving and snorkeling, this scuba experience in Hikkaduwa &amp; Trico in Sri Lanka is right up your alley.
+            Experience safe, relaxed, and unforgettable scuba diving in the crystal-clear waters of Hikkaduwa. Whether it’s your first dive or you’re a certified diver, Hikka Divers offers professional guidance and incredible underwater experiences.
            </span>
           </div>
          </div>
@@ -336,7 +424,7 @@ SnazzyDataForSnazzyMaps={"id":8097,"name":"WY","description":"Map style for WY d
            <a class="gdlr-core-button gdlr-core-button-solid gdlr-core-center-align gdlr-core-button-no-border" href="search-tours/index.html" id="gdlr-core-button-id-2" style="    background-color: white !important;
     color: #004375;">
             <span class="gdlr-core-content">
-             Tour Packages
+             Book Your Dive
             </span>
            </a>
           </div>
@@ -1550,6 +1638,16 @@ Explore vibrant reefs and marine life in crystal-clear waters.
    </div>
   </div>
   </script>
+  <script>
+  window.onload = () => {
+    const loader = document.getElementById("loader");
+    loader.classList.add("hidden");
+
+    // Optional: remove from DOM completely after fade
+    setTimeout(() => loader.remove(), 800);
+  };
+</script>
+
   <script type="speculationrules">
    {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/zurf\/scuba\/*"},{"not":{"href_matches":["\/zurf\/scuba\/wp-*.php","\/zurf\/scuba\/wp-admin\/*","\/zurf\/scuba\/wp-content\/uploads\/sites\/2\/*","\/zurf\/scuba\/wp-content\/*","\/zurf\/scuba\/wp-content\/plugins\/*","\/zurf\/scuba\/wp-content\/themes\/zurf\/*","\/zurf\/scuba\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
   </script>
